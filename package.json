@@ -1,0 +1,12 @@
+{
+  "name": "keystamp",
+  "private": true,
+  "scripts": {
+    "start": "meteor run"
+  },
+  "dependencies": {
+    "meteor-node-stubs": "~0.2.0",
+    "bcrypt": "^0.8.7",
+    "babel-runtime": "6.18.0"
+  }
+}
