@@ -12,10 +12,16 @@ Meteor.methods({
   }
 });
 
+Meteor.methods({
+  'upload'(url) {
+    let user_id = Meteor.userId()
+    return Keystamp.upload(user_id, url)
+  }
+});
 
 Meteor.methods({
-  'upload'(data) {
+  'search'(value) {
     let user_id = Meteor.userId()
-    return Keystamp.upload(user_id, data.url)
+    return Keystamp.search(user_id, value)
   }
 });

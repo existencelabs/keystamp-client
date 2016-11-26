@@ -55,6 +55,10 @@ let KeystampSDK = function(pub, secret) {
     },
     upload: function(id, url) {
       callAPI("POST", 'upload/' + id, {path: url})
+    },
+    search: function(id, value) {
+      let result = callAPI("POST", 'search/' + id, {value: value})
+      return result.success ? result.results : []
     }
   }
 }

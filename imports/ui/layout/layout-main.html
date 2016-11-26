@@ -4,7 +4,7 @@
     {{> Header user=getUser}}
     <section id="page">
       <div class="page-content">
-        {{> Template.dynamic template=main}}
+        {{> Template.dynamic template=main data=getPageData}}
       </div>
     </section>
     {{> Footer}}

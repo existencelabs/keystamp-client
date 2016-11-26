@@ -50,6 +50,11 @@ Template.LayoutMain.onCreated(function LayoutMainCreated() {
 Template.LayoutMain.helpers({
   getUser() {
     return Template.instance().user.get()
+  },
+  getPageData() {
+    return {
+      user: Template.instance().user.get()
+    }
   }
 })
 

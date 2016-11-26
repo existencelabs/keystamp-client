@@ -10,4 +10,18 @@
 
   background: @ColorBgPanel;
   color: @ColorPanel;
+
+  .search-form {
+    margin: 10px;
+    margin-top: 25px;
+
+    input, .btn {
+      background: #35728a;
+      color: #f9f9f9;
+
+      &::-webkit-input-placeholder, &:-moz-placeholder, &::-moz-placeholder, &:-ms-input-placeholder {
+       color: red;
+      }
+    }
+  }
 }

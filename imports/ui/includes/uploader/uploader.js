@@ -6,7 +6,7 @@ Template.Uploader.events({
     let file = event.target.files[0]
     if (file) {
       let callback = template.data.callback || function(err, url) {
-        Meteor.call('upload', {url: url})
+        Meteor.call('upload', url)
       }
 
       let uploader = new Slingshot.Upload( "uploadToAmazonS3" )

@@ -1,0 +1,357 @@
+{
+ "name": "OSC",
+ "children": [
+  {
+   "name": "CIBC",
+   "children": [
+    {
+     "name": "Advisor 1",
+     "children": [
+      {"name": "Customer 1", "size": 3938},
+      {"name": "Customer 2", "size": 3812},
+      {"name": "Customer 3", "size": 6714},
+      {"name": "Customer 4", "size": 743}
+     ]
+    },
+    {
+     "name": "Advisor 2",
+     "children": [
+      {"name": "Customer 5", "size": 3534},
+      {"name": "Customer 6", "size": 5731},
+      {"name": "Customer 7", "size": 7840},
+      {"name": "Customer 8", "size": 5914},
+      {"name": "Customer 9", "size": 3416}
+     ]
+    },
+    {
+     "name": "Advisor 3",
+     "children": [
+      {"name": "Customer 10", "size": 7074}
+     ]
+    }
+   ]
+  },
+  {
+   "name": "JP Morgan",
+   "children": [
+    {"name": "Advisor 4", "size": 17010},
+    {"name": "Advisor 5", "size": 5842},
+    {
+     "name": "Advisor 6",
+     "children": [
+      {"name": "Customer 11", "size": 1983},
+      {"name": "Customer 12", "size": 2047},
+      {"name": "Customer 13", "size": 1375},
+      {"name": "Customer 14", "size": 8746},
+      {"name": "Customer 15", "size": 2202},
+      {"name": "Customer 16", "size": 1382},
+      {"name": "Customer 17", "size": 1629},
+      {"name": "Customer 18", "size": 1675},
+      {"name": "Customer 19", "size": 2042}
+     ]
+    },
+    {"name": "Advisor 7", "size": 1041},
+    {"name": "Advisor 8", "size": 5176},
+    {"name": "Advisor 9", "size": 449},
+    {"name": "Advisor 10", "size": 5593},
+    {"name": "Advisor 11", "size": 5534},
+    {"name": "Advisor 12", "size": 9201},
+    {"name": "Advisor 13", "size": 19975},
+    {"name": "Advisor 14", "size": 1116},
+    {"name": "Advisor 15", "size": 6006}
+   ]
+  },
+  {
+   "name": "Morgan Stanley",
+   "children": [
+    {
+     "name": "Advisor 16",
+     "children": [
+      {"name": "Customer 20", "size": 721},
+      {"name": "Customer 21", "size": 4294},
+      {"name": "Customer 22", "size": 9800},
+      {"name": "Customer 23", "size": 1314},
+      {"name": "Customer 24", "size": 2220}
+     ]
+    },
+    {"name": "Advisor 17", "size": 1759},
+    {"name": "Advisor 18", "size": 2165},
+    {"name": "Advisor 19", "size": 586},
+    {"name": "Advisor 20", "size": 3331},
+    {"name": "Advisor 21", "size": 772},
+    {"name": "Advisor 22", "size": 3322}
+   ]
+  },
+  {
+   "name": "TD",
+   "children": [
+    {"name": "Advisor 23", "size": 8833},
+    {"name": "Advisor 24", "size": 1732},
+    {"name": "Advisor 25", "size": 3623},
+    {"name": "Advisor 26", "size": 10066}
+   ]
+  },
+  {
+   "name": "Assante Wealth Management",
+   "children": [
+    {"name": "Advisor 27", "size": 4116}
+   ]
+  },
+  {
+   "name": "Tim Kelly Sun Life Financial",
+   "children": [
+    {"name": "Advisor 28", "size": 1082},
+    {"name": "Advisor 29", "size": 1336},
+    {"name": "Advisor 30", "size": 319},
+    {"name": "Advisor 31", "size": 10498},
+    {"name": "Advisor 32", "size": 2822},
+    {"name": "Advisor 33", "size": 9983},
+    {"name": "Advisor 34", "size": 2213},
+    {"name": "Advisor 35", "size": 1681}
+   ]
+  },
+  {
+   "name": "RD Wealth Management",
+   "children": [
+    {"name": "Advisor 36", "size": 1616},
+    {"name": "Advisor 37", "size": 1027},
+    {"name": "Advisor 38", "size": 3891},
+    {"name": "Advisor 39", "size": 891},
+    {"name": "Advisor 40", "size": 2893},
+    {"name": "Advisor 41", "size": 5103},
+    {"name": "Advisor 42", "size": 3677},
+    {"name": "Advisor 43", "size": 781},
+    {"name": "Advisor 44", "size": 4141},
+    {"name": "Advisor 45", "size": 933},
+    {"name": "Advisor 46", "size": 5130},
+    {"name": "Advisor 47", "size": 3617},
+    {"name": "Advisor 48", "size": 3240},
+    {"name": "Advisor 49", "size": 2732},
+    {"name": "Advisor 50", "size": 2039},
+    {"name": "Advisor 51", "size": 1214},
+    {"name": "Advisor 52", "size": 3748},
+    {"name": "Advisor 53", "size": 843},
+    {
+     "name": "Advisor 54",
+     "children": [
+      {"name": "Customer 42", "size": 593},
+      {"name": "Customer 43", "size": 330},
+      {"name": "Customer 44", "size": 287},
+      {"name": "Customer 45", "size": 277},
+      {"name": "Customer 46", "size": 292},
+      {"name": "Customer 47", "size": 595},
+      {"name": "Customer 48", "size": 594},
+      {"name": "Customer 49", "size": 460},
+      {"name": "Customer 50", "size": 603},
+      {"name": "Customer 51", "size": 625},
+      {"name": "Customer 52", "size": 748},
+      {"name": "Customer 53", "size": 461},
+      {"name": "Customer 54", "size": 597},
+      {"name": "Customer 55", "size": 619},
+      {"name": "Customer 56", "size": 283},
+      {"name": "Customer 57", "size": 283},
+      {"name": "Customer 58", "size": 591},
+      {"name": "Customer 59", "size": 603},
+      {"name": "Customer 60", "size": 599},
+      {"name": "Customer 61", "size": 386},
+      {"name": "Customer 62", "size": 323},
+      {"name": "Customer 63", "size": 307},
+      {"name": "Customer 64", "size": 772},
+      {"name": "Customer 65", "size": 296},
+      {"name": "Customer 66", "size": 363},
+      {"name": "Customer 67", "size": 600},
+      {"name": "Customer 68", "size": 280},
+      {"name": "Customer 69", "size": 307},
+      {"name": "Customer 70", "size": 335},
+      {"name": "Customer 71", "size": 299},
+      {"name": "Customer 72", "size": 354},
+      {"name": "Customer 73", "size": 264}
+     ]
+    },
+    {"name": "Advisor 55", "size": 843},
+    {"name": "Advisor 56", "size": 1554},
+    {"name": "Advisor 57", "size": 970},
+    {"name": "Advisor 58", "size": 13896},
+    {"name": "Advisor 59", "size": 1594},
+    {"name": "Advisor 60", "size": 4130},
+    {"name": "Advisor 61", "size": 791},
+    {"name": "Advisor 62", "size": 1124},
+    {"name": "Advisor 63", "size": 1876},
+    {"name": "Advisor 64", "size": 1101}
+   ]
+  },
+  {
+   "name": "Kratz Group",
+   "children": [
+    {"name": "Advisor 65", "size": 2105},
+    {"name": "Advisor 66", "size": 1316},
+    {"name": "Advisor 67", "size": 3151},
+    {"name": "Advisor 68", "size": 3770},
+    {"name": "Advisor 69", "size": 2435},
+    {"name": "Advisor 70", "size": 4839},
+    {"name": "Advisor 71", "size": 1756},
+    {"name": "Advisor 72", "size": 4268},
+    {"name": "Advisor 73", "size": 1821},
+    {"name": "Advisor 74", "size": 5833}
+   ]
+  },
+  {
+   "name": "The Bonten Group",
+   "children": [
+    {"name": "Advisor 75", "size": 8258},
+    {"name": "Advisor 76", "size": 10001},
+    {"name": "Advisor 77", "size": 8217},
+    {"name": "Advisor 78", "size": 12555},
+    {"name": "Advisor 79", "size": 2324},
+    {"name": "Advisor 80", "size": 10993},
+    {
+     "name": "Advisor 81",
+     "children": [
+      {"name": "Customer 50", "size": 9354},
+      {"name": "Customer 51", "size": 1233}
+     ]
+    },
+    {"name": "Advisor 82", "size": 335},
+    {"name": "Advisor 83", "size": 383},
+    {"name": "Advisor 84", "size": 874},
+    {
+     "name": "Advisor 85",
+     "children": [
+      {"name": "Customer 52", "size": 3165},
+      {"name": "Customer 53", "size": 2815},
+      {"name": "Customer 54", "size": 3366}
+     ]
+    },
+    {"name": "Advisor 86", "size": 17705},
+    {"name": "Advisor 87", "size": 1486},
+    {
+     "name": "Advisor 88",
+     "children": [
+      {"name": "Customer 55", "size": 6367},
+      {"name": "Customer 56", "size": 1229},
+      {"name": "Customer 57", "size": 2059},
+      {"name": "Customer 58", "size": 2291}
+     ]
+    },
+    {"name": "Advisor 89", "size": 5559},
+    {"name": "Advisor 90", "size": 19118},
+    {"name": "Advisor 91", "size": 6887},
+    {"name": "Advisor 92", "size": 6557},
+    {"name": "Advisor 93", "size": 22026}
+   ]
+  },
+  {
+   "name": "Elie Nour Group",
+   "children": [
+    {
+     "name": "Advisor 94",
+     "children": [
+      {"name": "Customer 59", "size": 1302},
+      {"name": "Customer 60", "size": 24593},
+      {"name": "Customer 61", "size": 652},
+      {"name": "Customer 62", "size": 636},
+      {"name": "Customer 63", "size": 6703}
+     ]
+    },
+    {
+     "name": "Advisor 95",
+     "children": [
+      {"name": "Customer 64", "size": 2138},
+      {"name": "Customer 65", "size": 3824},
+      {"name": "Customer 66", "size": 1353},
+      {"name": "Customer 67", "size": 4665},
+      {"name": "Customer 68", "size": 2649},
+      {"name": "Customer 69", "size": 2832},
+      {"name": "Customer 70", "size": 4896},
+      {"name": "Customer 71", "size": 763},
+      {"name": "Customer 72", "size": 5222},
+      {"name": "Customer 73", "size": 7862},
+      {"name": "Customer 74", "size": 8435}
+     ]
+    },
+    {
+     "name": "Advisor 96",
+     "children": [
+      {"name": "Customer 75", "size": 20544},
+      {"name": "Customer 76", "size": 19788},
+      {"name": "Customer 77", "size": 10349},
+      {"name": "Customer 78", "size": 3301},
+      {"name": "Customer 79", "size": 19382},
+      {"name": "Customer 80", "size": 11275},
+      {"name": "Customer 81", "size": 7147},
+      {"name": "Customer 82", "size": 9930}
+     ]
+    },
+    {
+     "name": "Advisor 97",
+     "children": [
+      {"name": "Customer 83", "size": 2313},
+      {"name": "Customer 84", "size": 1880},
+      {"name": "Customer 85", "size": 1701},
+      {"name": "Customer 86", "size": 1117}
+     ]
+    },
+    {
+     "name": "Advisor 98",
+     "children": [
+      {"name": "Customer 87", "size": 20859},
+      {"name": "Customer 88", "size": 4614},
+      {"name": "Customer 89", "size": 10530}
+     ]
+    },
+    {
+     "name": "Advisor 99",
+     "children": [
+      {
+       "name": "Customer 90",
+       "children": [
+        {"name": "", "size": 4461},
+        {"name": "", "size": 6314},
+        {"name": "", "size": 3444}
+       ]
+      },
+      {
+       "name": "Customer 91",
+       "children": [
+        {"name": "", "size": 3179},
+        {"name": "", "size": 4060},
+        {"name": "", "size": 4138},
+        {"name": "", "size": 1690},
+        {"name": "", "size": 1830}
+       ]
+      },
+      {
+       "name": "Customer 92",
+       "children": [
+        {"name": "", "size": 5219},
+        {"name": "", "size": 3165},
+        {"name": "", "size": 3509}
+       ]
+      },
+      {"name": "Customer 93", "size": 1286},
+      {
+       "name": "Customer 94",
+       "children": [
+        {"name": "", "size": 9956},
+        {"name": "", "size": 3899},
+        {"name": "", "size": 3202}
+       ]
+      },
+      {
+       "name": "Customer 94",
+       "children": [
+        {"name": "", "size": 9191}
+       ]
+      },
+      {"name": "Customer 101", "size": 2490},
+      {"name": "Customer 102", "size": 5248},
+      {"name": "Customer 103", "size": 4190},
+      {"name": "Customer 104", "size": 2581},
+      {"name": "Customer 105", "size": 2023}
+     ]
+    },
+    {"name": "Advisor 101", "size": 16540}
+   ]
+  }
+ ]
+}
