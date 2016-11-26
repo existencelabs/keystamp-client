@@ -3,8 +3,7 @@ import { BlazeLayout } from 'meteor/kadira:blaze-layout'
 
 import '../../ui/layout/layout-main'
 
-console.log("Routes")
-
+// Home !
 FlowRouter.route('/', {
   name: 'App.home',
   action() {

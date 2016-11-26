@@ -1,6 +1,7 @@
 {
-  "JP_API": {
+  "KEYSTAMP": {
+    "HOST": "//localhost:3001",
     "PUBLIC": "123",
-    "SECRET": "abc"
+    "SECRET": "456"
   }
 }

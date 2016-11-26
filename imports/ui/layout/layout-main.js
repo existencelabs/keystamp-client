@@ -13,5 +13,14 @@ import '../pages/home-page/home-page.js';
 
 Template.LayoutMain.onCreated(function LayoutMainCreated() {
   let instance = this
+
+  // Get User
+  console.log("User on Keystamp ? ")
+  Meteor.call('user-account', function(err, result) {
+    if (err) {
+      return console.warn("Err : ", err)
+    }
+    console.log("User account on API : ", result)
+  })
 });
 
