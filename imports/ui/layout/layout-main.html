@@ -1,12 +1,12 @@
 <Template name="LayoutMain">
   <div id="layout-main" class="{{getLayoutClasses}}">
-    <div id="layout-content">
-      <section id="page">
-        <div class="page-content">
-          {{> Template.dynamic template=main}}
-        </div>
-      </section>
-    </div>
+    {{> Panel}}
+    {{> Header user=getUser}}
+    <section id="page">
+      <div class="page-content">
+        {{> Template.dynamic template=main}}
+      </div>
+    </section>
     {{> Footer}}
   </div>
 </Template>

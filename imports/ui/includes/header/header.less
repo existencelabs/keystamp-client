@@ -1,0 +1,42 @@
+@import "../../style/variables.import.less";
+
+#header {
+  background: @ColorBgHeader;
+  color: @ColorHeader;
+
+  height: @HeaderHeight;
+  line-height: @HeaderHeight; /* .logo img height */
+
+
+  .logo {
+    display: block;
+    width: @PanelWidth;
+    background: @ColorOSC;
+
+    img {
+      margin-left: 12px; /* Img are not centered, fke it */
+    }
+  }
+
+  .user-account {
+    float: right;
+    font-size: 1.2em;
+
+    a {
+      display: inline-block;
+      width: 150px;
+      text-align: center;
+    }
+  }
+
+  a {
+    color: #F9F9F9;
+    &:hover {
+      text-decoration: none;
+      background: lighten(@ColorBgHeader, 10);
+    }
+  }
+  i {
+    margin-right: .5em;
+  }
+}

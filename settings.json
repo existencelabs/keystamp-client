@@ -1,7 +1,7 @@
 {
   "KEYSTAMP": {
     "HOST": "//localhost:3001",
-    "PUBLIC": "123",
-    "SECRET": "456"
+    "PUBLIC": 123,
+    "SECRET": 456
   }
 }

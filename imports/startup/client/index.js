@@ -1,2 +1,3 @@
-import '../config/user-accounts.js'
+import '../../client/config/user-accounts.js'
+
 import './routes.js'

@@ -14,18 +14,21 @@ FlowRouter.route('/', {
 
 // Define these routes in a file loaded on both client and server
 AccountsTemplates.configureRoute('signIn', {
-  name: 'signin',
-  path: '/signin'
+  name: 'App.login',
+  path: '/login'
 });
 
 AccountsTemplates.configureRoute('signUp', {
-  name: 'join',
+  name: 'App.join',
   path: '/join'
 });
 
-AccountsTemplates.configureRoute('forgotPwd');
+AccountsTemplates.configureRoute('forgotPwd', {
+  name: 'App.forgot',
+  path: '/forgot-password'
+});
 
 AccountsTemplates.configureRoute('resetPwd', {
-  name: 'resetPwd',
+  name: 'App.resetPwd',
   path: '/reset-password'
 });

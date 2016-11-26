@@ -1,4 +1,3 @@
-
 // Config file have to be on user/ subdirectory, cause he have to be loaded BEFORE /lib/routes/user/user-accounts.js
 AccountsTemplates.configure({
   // Flow Router

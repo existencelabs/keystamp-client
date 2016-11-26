@@ -1,7 +1,7 @@
 import { Meteor } from 'meteor/meteor';
 
 // Load configs
-import '../config/user-accounts.js'
+import '../../server/config/accounts.js'
 
 // Load methodes
 import '../../server/methods/public.js'

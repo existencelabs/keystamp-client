@@ -1,0 +1,17 @@
+<Template name="Header">
+  <header id="header">
+
+    <div class='user-account'>
+      {{#if isUserLogged}}
+
+      {{else}}
+        <a href="{{pathFor 'App.join'}}"><i class="fa fa-sign-in"></i> Join us</a>
+      {{/if}}
+    </div>
+
+    <a href="{{pathFor 'App.home'}}" class="logo">
+      <img src="http://www.osc.gov.on.ca/static/structure/img/logo.png"/>
+    </a>
+
+  </header>
+</Template>
