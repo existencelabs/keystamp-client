@@ -14,6 +14,12 @@ let KeystampSDK = function(pub, secret) {
       headers['x-access-token'] = token
     }
 
+    console.log("Call API ", method, "http://localhost:4000/api/" + url, {
+      params: opts || {}, // GET || POST
+      timeout: timeout || 4000, // 4s
+      headers: headers,
+    })
+
     // Make a call
     HTTP.call(method, "http://localhost:4000/api/" + url, {
       params: opts || {}, // GET || POST
@@ -23,7 +29,7 @@ let KeystampSDK = function(pub, secret) {
       if (err) {
         return future.throw(err)
       }
-      future.return(result)
+      future.return(result.data)
     })
 
     // Wait for asyncrone call to be ended, and return the result
@@ -32,7 +38,7 @@ let KeystampSDK = function(pub, secret) {
 
   // Get token
   let token_response = callAPI("POST", "auth", {app_id: pub, app_secret: secret}, 2000) // Wait max 1sec to get the API token
-  token = token_response.data.token
+  token = token_response.token
   if (!token) {
     throw new Meteor.Error("Invalid connect to Keystamp")
   }
@@ -40,11 +46,16 @@ let KeystampSDK = function(pub, secret) {
   // Return all available endpoint
   return {
     propagateNewUser: function(opts) {
-      return callAPI("POST", 'create_user', opts)
+      callAPI("POST", 'create_user', opts)
     },
     getUserAccount: function(id) {
-      return callAPI("GET", 'users/' + id)
+      let result = callAPI("GET", 'users/' + id)
+      console.log("Get user result : ", result, result.success ? result.user : null)
+      return result.success ? result.user : null
     },
+    upload: function(id, url) {
+      callAPI("POST", 'upload/' + id, {path: url})
+    }
   }
 }
 

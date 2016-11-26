@@ -6,11 +6,10 @@ Accounts.onCreateUser(function(options, user) {
     return;
   }
 
-  console.log("New user created : ", options, user)
-  Keystamp.propagateNewUser({
-    _id: options._id,
+  console.log(" Propagated: ", Keystamp.propagateNewUser({
+    uid: user._id,
     email: options.email
-  })
+  }))
 
   return user
 })

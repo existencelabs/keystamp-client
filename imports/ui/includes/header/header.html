@@ -3,9 +3,19 @@
 
     <div class='user-account'>
       {{#if isUserLogged}}
-
+        {{#let user=getUser}}
+          <a class="open-user-account">
+            <div class="avatar"><i class="fa fa-user"></i></div>
+            {{user.email}}
+          </a>
+          <a class="logout-user-account">
+            <i class="fa fa-sign-out"></i>
+            <span>Logout</span>
+          </a>
+        {{/let}}
       {{else}}
-        <a href="{{pathFor 'App.join'}}"><i class="fa fa-sign-in"></i> Join us</a>
+        <a href="{{pathFor 'App.login'}}" class="header-link"><i class="fa fa-user"></i> Login </a>
+        <a href="{{pathFor 'App.join'}}" class="header-link"><i class="fa fa-sign-in"></i> Join us</a>
       {{/if}}
     </div>
 

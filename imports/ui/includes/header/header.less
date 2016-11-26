@@ -16,27 +16,81 @@
     img {
       margin-left: 12px; /* Img are not centered, fke it */
     }
+
+    &:hover {
+      background: @ColorOSC; /* dont update bg for logo */
+    }
   }
 
   .user-account {
     float: right;
     font-size: 1.2em;
 
-    a {
-      display: inline-block;
-      width: 150px;
-      text-align: center;
-    }
-  }
 
-  a {
-    color: #F9F9F9;
-    &:hover {
-      text-decoration: none;
-      background: lighten(@ColorBgHeader, 10);
+    .open-user-account {
+      min-height: @HeaderHeight;
+
+      display: inline-block;
+      min-width: 150px;
+      text-align: center;
+      padding: 0 35px;
+
+      .avatar {
+        line-height: 55px;
+        display: inline-block;
+        float: left;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        border: 1px solid darken(@ColorHeader, 15);
+        background: lighten(@ColorOSC, 20);
+        color: darken(@ColorHeader, 15);
+        margin-top: 12px;
+        margin-right: .5em;
+        font-size: 30px;
+        text-align: center;
+        overflow: hidden;
+        text-align: center;
+
+        i {
+          margin: 0;
+        }
+      }
     }
-  }
-  i {
-    margin-right: .5em;
+    .logout-user-account {
+      padding: 0 35px;
+      min-width: 100px;
+      i {
+        margin: 0;
+      }
+      span {
+        display: inline-block;
+        max-width: 0;
+        transition: all .5s;
+        opacity: 0;
+      }
+      &:hover span {
+        max-width: 100px;
+        opacity: 1;
+      }
+    }
+
+
+    .header-link, .open-user-account, .logout-user-account {
+      display: inline-block;
+      min-width: 150px;
+      text-align: center;
+      color: #F9F9F9;
+      text-decoration: none;
+      cursor: pointer;
+      &:hover {
+        text-decoration: none;
+        background: lighten(@ColorBgHeader, 10);
+      }
+    }
+
+    i {
+      margin-right: .5em;
+    }
   }
 }

@@ -3,5 +3,7 @@
     "HOST": "//localhost:3001",
     "PUBLIC": 123,
     "SECRET": 456
-  }
+  },
+  "AWSAccessKeyId": "AKIAII6KJA2BUNIIMG4A",
+  "AWSSecretAccessKey": "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"
 }

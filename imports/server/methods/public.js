@@ -11,3 +11,11 @@ Meteor.methods({
     return Keystamp.getUserAccount(user_id)
   }
 });
+
+
+Meteor.methods({
+  'upload'(data) {
+    let user_id = Meteor.userId()
+    return Keystamp.upload(user_id, data.url)
+  }
+});
