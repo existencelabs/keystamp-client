@@ -16,8 +16,6 @@ import '../pages/home-page/home-page.js';
 Template.LayoutMain.onCreated(function LayoutMainCreated() {
   let instance = this
 
-  console.log("LayoutMain")
-
   // Global ReactiveVar
   instance.user = new ReactiveVar({})
 
@@ -64,7 +62,6 @@ let updateUserData = function(instance) {
     if (err) {
       return console.warn("Err : ", err)
     }
-    console.log("User account on API : ", result)
     instance.user.set(result)
   })
 }

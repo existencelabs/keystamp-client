@@ -17,7 +17,6 @@ Template.Panel.events({
       if (err) {
         return console.warn(err)
       }
-      console.log("search results: ", results)
       instance.results.set(results)
     })
   }

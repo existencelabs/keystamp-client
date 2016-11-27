@@ -9,7 +9,6 @@ import '../../includes/new-user/new-user';
 import '../../includes/complain/complain';
 
 
-
 import './home-page.html';
 import './home-page.less';
 
@@ -17,9 +16,15 @@ import './home-page.less';
 Template.HomePage.onCreated(function HomePageCreated() {
   let instance = this
   instance.users = new ReactiveVar([])
+  instance.documents = new ReactiveVar([])
 
   Meteor.call('get-users', function(err, result) {
     instance.users.set(result)
+  })
+
+  // Hahaha !
+  Meteor.call('get-all-documents', function(err, result) {
+    instance.documents.set(result)
   })
 
   // if (!instance.data.user &&  window.location !== '') {
@@ -29,17 +34,14 @@ Template.HomePage.onCreated(function HomePageCreated() {
 
 Template.HomePage.helpers({
   getUser() {
-    console.log("getUser on homepage : ", Template.instance().data)
     return Template.instance().data.user
   },
   getUsers() {
-    console.log("getUserssss on homepage : ", Template.instance().users.get())
     return Template.instance().users.get()
   },
 
   isLoggedUser() {
     let instance = Template.instance()
-    console.log(instance.data.user._id)
 
     if (!instance.data.user || !instance.data.user._id) {
       Meteor.setTimeout(function() {
@@ -125,6 +127,9 @@ Template.HomePage.helpers({
     })
     return r
   },
+  getAllDocuments() {
+    return Template.instance().documents.get()
+  },
 })
 
 Template.HomePage.events({
@@ -153,5 +158,9 @@ Template.HomePage.events({
   'click .upload-doc'(e, instance) {
     let uid = e.currentTarget.getAttribute('data-uid')
     Modal.show('Uploader', {assignedTo: uid})
+  },
+  'click .osc-verify'(e, instance) {
+    let hash = e.currentTarget.getAttribute('data-doc')
+    Meteor.call('osc-verify', {hash: hash})
   }
 })

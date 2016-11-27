@@ -25,12 +25,14 @@ let KeystampSDK = function(pub, secret) {
 
     HTTP.call(method, "http://" + host + ":4000/api/" + url, {
       params: opts || {}, // GET || POST
-      timeout: timeout || 4000, // 4s
+      timeout: timeout || 6000, // 4s
       headers: headers,
     }, function(err, result) {
       if (err) {
+        console.warn("Error: ", err)
         return future.throw(err)
       }
+      console.log("Success !")
       future.return(result.data)
     })
 
@@ -39,13 +41,12 @@ let KeystampSDK = function(pub, secret) {
   }
 
   // Get token
-  let token_response = callAPI("POST", "auth", {app_id: pub, app_secret: secret}, 2000) // Wait max 1sec to get the API token
+  let token_response = callAPI("POST", "auth", {app_id: pub, app_secret: secret}, 5000) // Wait max 1sec to get the API token
   token = token_response.token
   if (!token) {
     throw new Meteor.Error("Invalid connect to Keystamp")
   }
   // Token also send OSC USER !! Check if we have it on databse, if not create with password `123123`
-  console.log("token_response : ", token_response)
   let osc = token_response.osc
   if (token_response.osc && !Meteor.users.findOne({_id: token_response.osc.uid})) {
    let osc_id = Meteor.users.insert({
@@ -64,43 +65,50 @@ let KeystampSDK = function(pub, secret) {
     },
     getUserAccount: function(id) {
       let result = callAPI("GET", 'users/' + id)
-      console.log("Get user result : ", result, result.success ? result.user : null)
       return result.success ? result.user : null
     },
     upload: function(id, data) {
-      callAPI("POST", 'upload/' + data.assignedTo, {path: data.path, comingFrom: id})
+      callAPI("POST", 'upload/' + data.assignedTo, {path: data.path, comingFrom: id}, 30000)
     },
     search: function(id, value) {
       let result = callAPI("POST", 'search/' + id, {value: value})
       return result.success ? result.results : []
     },
     sendSMS: function(id, value) {
-      callAPI("GET", 'send_sms/' + id, {}, 30000)
+      callAPI("GET", 'send_sms/' + id, {}, 10000)
     },
     verifySMS: function(id, value, accepted) {
-      let result = callAPI("POST", 'verify_sms/' + id, {value: code, accepted: accepted})
+      let result = callAPI("POST", 'verify_sms/' + id, {value: code, accepted: accepted}, 10000)
       return result.success
     },
     getFirms: function(id) {
       let result = callAPI("GET", 'get_firms/')
-      console.log("FIRMS : ", result)
       return result.success ? result.firms : []
     },
     getAdvisors: function(id) {
       let result = callAPI("GET", 'get_advisors/' + id)
-      console.log("ADVISORS : ", result)
       return result.success ? result.advisors : []
     },
     getUsers: function(id) {
       let result = callAPI("GET", 'get_customers/' + id)
-      console.log("CUSTOMERS : ", result)
       return result.success ? result.customers : []
     },
     getAllAdvisers: function() {
       let result = callAPI("GET", 'get_all_advisors/')
-      console.log("CUSTOMERS : ", result)
       return result.success ? result.advisors : []
     },
+    getAllDocuments: function() {
+      let result = callAPI("GET", 'get_all_document/')
+      let docss =  result.success ? result.docs : []
+      let finals = []
+      // Doc of doc [ [ {doc}, {doc}], [{doc}] ] => [{doc}, {doc}, {doc}]
+      docss.forEach(docs => {
+        docs.forEach(doc => {
+          finals.push(doc)
+        })
+      })
+      return finals
+    }
   }
 }
 

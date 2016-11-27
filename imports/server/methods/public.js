@@ -49,9 +49,6 @@ Meteor.methods({
     let user = Keystamp.getUserAccount(user_id)
     if (!user) { return [] }
 
-    console.log("UERR : ", user)
-
-
     if (user.role === 'osc') {
       return Keystamp.getFirms(user._id)
     }
@@ -66,14 +63,17 @@ Meteor.methods({
     }
   }
 });
+Meteor.methods({
+  'get-all-documents'() {
+    return Keystamp.getAllDocuments()
+  }
+})
 
 Meteor.methods({
   'create-user'(data) {
-    console.log("Method - create user : ", data)
     let id = Meteor.users.insert({
       emails: [{'address': data.email}],
     });
-    console.log("Created : ", id, data.password)
     Accounts.setPassword(id, data.password);
     data._id = id
 

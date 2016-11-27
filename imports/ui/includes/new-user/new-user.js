@@ -32,16 +32,7 @@ Template.newUser.events({
       role: instance.data.role,
       assignedTo: Meteor.userId()
     })
-console.log("Create !", {
-      email: instance.email.get(),
-      phone: instance.phone.get(),
-      password: instance.password.get(),
-      role: instance.data.role,
-      assignedTo: Meteor.userId()
-    })
+
     instance.isConfirmed.set(true)
-    // Accounts.createUser(opts, function(err, user) {
-    //   console.log("USER CREATED : ", {err, user})
-    // })
   },
 })

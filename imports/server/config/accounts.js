@@ -2,10 +2,9 @@ import { Keystamp } from '../lib/keystamp'
 
 Accounts.onCreateUser(function(options, user) {
     if(!options || !user) {
-      console.log('error creating user');
+      console.warn('error creating user');
     return;
   }
-  console.log("New user, ", options, user)
 
 
   Keystamp.propagateNewUser({
