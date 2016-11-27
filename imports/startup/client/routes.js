@@ -32,3 +32,27 @@ AccountsTemplates.configureRoute('resetPwd', {
   name: 'App.resetPwd',
   path: '/reset-password'
 });
+
+
+// var email = AccountsTemplates.removeField('email');
+// var password = AccountsTemplates.removeField('password');
+
+AccountsTemplates.addField({
+  _id: 'phone',
+  type: 'text',
+  required: true,
+  displayName: "Phone",
+  maxLength: 100
+});
+
+AccountsTemplates.addField({
+  _id: 'role',
+  type: 'text',
+  required: true,
+  displayName: "Role",
+  maxLength: 100
+});
+
+
+// AccountsTemplates.addField(email);
+// AccountsTemplates.addField(password);

@@ -25,3 +25,17 @@ Meteor.methods({
     return Keystamp.search(user_id, value)
   }
 });
+
+Meteor.methods({
+  'send-sms'(value) {
+    let user_id = Meteor.userId()
+    return Keystamp.sendSMS(user_id, value)
+  }
+});
+
+Meteor.methods({
+  'verify-sms'(value) {
+    let user_id = Meteor.userId()
+    return Keystamp.verifySMS(user_id, value)
+  }
+});

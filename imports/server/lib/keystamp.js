@@ -1,6 +1,8 @@
 import { HTTP } from 'meteor/http'
 let Future = Npm.require('fibers/future');
 
+let IS_DEV = Meteor.settings.IS_DEV || false
+
 let KeystampSDK = function(pub, secret) {
   // Save a token for this instance
   let token;
@@ -14,14 +16,9 @@ let KeystampSDK = function(pub, secret) {
       headers['x-access-token'] = token
     }
 
-    console.log("Call API ", method, "http://localhost:4000/api/" + url, {
-      params: opts || {}, // GET || POST
-      timeout: timeout || 4000, // 4s
-      headers: headers,
-    })
-
     // Make a call
-    HTTP.call(method, "http://localhost:4000/api/" + url, {
+    let host = IS_DEV ? 'localhost' : ''
+    HTTP.call(method, "http://" + host + ":4000/api/" + url, {
       params: opts || {}, // GET || POST
       timeout: timeout || 4000, // 4s
       headers: headers,
@@ -59,7 +56,14 @@ let KeystampSDK = function(pub, secret) {
     search: function(id, value) {
       let result = callAPI("POST", 'search/' + id, {value: value})
       return result.success ? result.results : []
-    }
+    },
+    sendSMS: function(id, value) {
+      callAPI("GET", 'send_sms/' + id)
+    },
+    verifySMS: function(id, value, accepted) {
+      let result = callAPI("POST", 'verify_sms/' + id, {value: code, accepted: accepted})
+      return result.success
+    },
   }
 }
 

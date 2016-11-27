@@ -1,7 +1,40 @@
 <Template name="HomePage">
+  {{#if isLoggedUser}}
 
-  {{> Uploader}}
+    {{#if isCustomer}}
+      <h3>To sign</h3>
+      {{#if getDocsToSign}}
+        <div class="docs">
+          {{#each doc in getDocsToSign}}
+            <div class="doc">
+              {{doc.path}}
+              {{doc.updatedAt}}
+              <button class="btn btn-secondary sign" data-doc="hash">Sign</button>
+            </div>
+          {{/each}}
+        </div>
+      {{else}}
+        <span class="no-items">No document to sign</span>
+      {{/if}}
 
-  {{> Graph2}}
+
+      <h3>Archives</h3>
+      {{#if getDocsSigned}}
+        <div class="docs">
+          {{#each doc in getDocsSigned}}
+            <div class="doc">
+              {{doc.path}}
+            </div>
+          {{/each}}
+        </div>
+      {{else}}
+        <span class="no-items">No document signed already</span>
+      {{/if}}
+    {{/if}}
+
+  {{else}}
+      Please <a href="/login">Login</a>
+  {{/if}}
+
 
 </Template>
