@@ -44,8 +44,6 @@ Template.HomePage.helpers({
 
   getDocsToSign() {
     let docs = Template.instance().data.user.docs
-    docs = [{hash:'123', signed:false}, {hash:'456', signed:true}]
-
     let r = []
     docs.forEach(doc => {
       if (doc.signed === false) {
@@ -56,8 +54,6 @@ Template.HomePage.helpers({
   },
   getDocsSigned() {
     let docs = Template.instance().data.user.docs
-    docs = [{hash:'123', signed:false}, {hash:'456', signed:true}]
-
     let r = []
     docs.forEach(doc => {
       if (doc.signed === true) {
