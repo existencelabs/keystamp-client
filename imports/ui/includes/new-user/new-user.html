@@ -1,0 +1,50 @@
+<template name="newUser">
+    <div class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+            <form>
+                <div class="modal-header">
+                  <a href="#"  data-dismiss="modal">
+                    <i class="fa fa-times" style="float:right;color:#888">
+                    </i>
+                  </a>
+                  <h4 class="modal-title">New {{getRole}}</h4>
+                </div>
+
+                {{#if isConfirmed}}
+
+                  <div class="modal-body" style="text-align:center">
+                    <h3>Confirmed</h3>
+                    New user has been created
+                  </div>
+                  <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  </div>
+
+                {{else}}
+
+                  <div class="modal-body">
+                    <div class="form-group">
+                      <label for="email">Email</label>
+                      <input type="email" class="code form-control" name="email" id="email" value="{{getValue 'email'}}" placeholder="Email"/>
+                    </div>
+                    <div class="form-group">
+                      <label for="phone">Phone</label>
+                      <input type="phone" class="code form-control" name="phone" id="phone" value="{{getValue 'phone'}}" placeholder="Phone"/>
+                    </div>
+                    <div class="form-group">
+                      <label for="password">Password</label>
+                      <input type="password" class="code form-control" name="password" id="password" value="{{getValue 'password'}}" placeholder="Password"/>
+                    </div>
+                  </div>
+
+                  <div class="modal-footer">
+                      <button type="button" class="btn btn-primary create">Create</button>
+                  </div>
+
+                {{/if}}
+              </form>
+            </div>
+        </div>
+    </div>
+</template>

@@ -16,8 +16,13 @@ let KeystampSDK = function(pub, secret) {
       headers['x-access-token'] = token
     }
 
+
     // Make a call
     let host = IS_DEV ? 'localhost' : ''
+    console.log(" ")
+    console.log("-------->>> API " + method, "http://" + host + ":4000/api/" + url, opts)
+    console.log(" ")
+
     HTTP.call(method, "http://" + host + ":4000/api/" + url, {
       params: opts || {}, // GET || POST
       timeout: timeout || 4000, // 4s
@@ -38,6 +43,17 @@ let KeystampSDK = function(pub, secret) {
   token = token_response.token
   if (!token) {
     throw new Meteor.Error("Invalid connect to Keystamp")
+  }
+  // Token also send OSC USER !! Check if we have it on databse, if not create with password `123123`
+  console.log("token_response : ", token_response)
+  let osc = token_response.osc
+  if (token_response.osc && !Meteor.users.findOne({_id: token_response.osc.uid})) {
+   let osc_id = Meteor.users.insert({
+      _id: osc.uid,
+      emails: [{'address' :osc.email}],
+      is_osc: true
+    });
+    Accounts.setPassword(osc_id, '123123');
   }
 
   // Return all available endpoint
@@ -63,6 +79,16 @@ let KeystampSDK = function(pub, secret) {
     verifySMS: function(id, value, accepted) {
       let result = callAPI("POST", 'verify_sms/' + id, {value: code, accepted: accepted})
       return result.success
+    },
+    getFirms: function(id) {
+      let result = callAPI("GET", 'get_firms/')
+      console.log("USERS : ", result)
+      return result.success ? result.firms : []
+    },
+    getAdvisors: function(id) {
+      let result = callAPI("GET", 'get_advisors/' + id)
+      console.log("USERS : ", result)
+      return result.success ? result.advisors : []
     },
   }
 }

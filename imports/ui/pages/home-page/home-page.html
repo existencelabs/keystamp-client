@@ -2,38 +2,143 @@
   {{#if isLoggedUser}}
 
     {{#if isCustomer}}
-      <h3>To sign</h3>
-      {{#if getDocsToSign}}
-        <div class="docs">
-          {{#each doc in getDocsToSign}}
-            <div class="doc">
-              {{doc.path}}
-              {{doc.updatedAt}}
-              <button class="btn btn-secondary sign" data-doc="hash">Sign</button>
+    <!-- CUSTOMER -->
+
+      <h3>Customer Dashboard</h3>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="box">
+              <h3>To sign</h3>
+              {{#if haveDocsToSign}}
+                <div class="docs">
+                  {{#each doc in getDocsToSign}}
+                    <div class="doc">
+                      {{doc.path}}
+                      {{doc.updatedAt}}
+                      <button class="btn btn-secondary sign btn-large" data-doc="hash">Sign</button>
+                    </div>
+                  {{/each}}
+                </div>
+              {{else}}
+                <span class="no-items">No document to sign</span>
+              {{/if}}
             </div>
-          {{/each}}
+          </div>
+
+          <div class="col-md-6">
+            <div class="box">
+              <h3>Archives</h3>
+              {{#if haveDocsSigned}}
+                <div class="docs">
+                  {{#each doc in getDocsSigned}}
+                    <div class="doc">
+                      {{doc.path}}
+                      {{doc.updatedAt}}
+                    </div>
+                  {{/each}}
+                </div>
+              {{else}}
+                <span class="no-items">No document signed already</span>
+              {{/if}}
+            </div>
+          </div>
         </div>
-      {{else}}
-        <span class="no-items">No document to sign</span>
-      {{/if}}
+      </div>
 
 
-      <h3>Archives</h3>
-      {{#if getDocsSigned}}
-        <div class="docs">
-          {{#each doc in getDocsSigned}}
-            <div class="doc">
-              {{doc.path}}
+
+
+    {{else}}
+
+      {{#if isFirm}}
+        <!-- FIRM -->
+        <h3>Firm Dashboard</h3>
+
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-lg-6" style="margin-bottom:20px">
+              {{> Graph}}
             </div>
-          {{/each}}
+            <div class="col-lg-6" style="margin-bottom:20px">
+              <div class="box after-graph">
+                <button class="btn btn-primary btn-large add-advisor" style="float:right; margin:10px;">Add an Advisor</button>
+                <h3>Advisors</h3>
+                <div style="clear:both"></div>
+                <div class="users">
+                  {{#each u in getUsers}}
+                    <div class="user">
+                      <strong>{{u.email}}</strong> {{u.phone}}
+                    </div>
+                  {{/each}}
+                </div>
+
+              </div>
+            </div>
+          </div>
         </div>
+
+
       {{else}}
-        <span class="no-items">No document signed already</span>
+
+
+        {{#if isAdvisor}}
+          <!-- ADVISOR -->
+          <h3>Advisor Dashboard</h3>
+
+
+        {{else}}
+
+
+          {{#if isOSC}}
+            <!--- OSC -->
+            <h3>OSC Dashboard</h3>
+            {{> Graph2}}
+            <div class="container" style="margin-top:20px">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="box after-graph">
+                    <button class="btn btn-primary btn-large add-firm"  style="float:right; margin:10px;">Add a Firm</button>
+                    <h4>Firms</h4>
+                    <div style="clear:both"></div>
+
+                    <div class="users">
+                      {{#each u in getUsers}}
+                        <div class="user">
+                          <strong>{{u.email}}</strong> {{u.phone}}
+                        </div>
+                      {{/each}}
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="box after-graph">
+                    <h4>Documents</h4>
+                  </div>
+                </div>
+              </div>
+            </div>
+          {{else}}
+
+            {{#if isIssuer}}
+              <!-- Issuer -->
+              <h3>Issuer Dashboard</h3>
+
+            {{/if}}
+
+
+          {{/if}}
+
+        {{/if}}
+
+
       {{/if}}
     {{/if}}
 
   {{else}}
-      Please <a href="/login">Login</a>
+      <div style="margin-top:50px; text-align: center">
+        Please <a href="/login">Login</a> <br/> <span class="color: #AAA">You will be redirected soon</span>
+      </div>
   {{/if}}
 
 
