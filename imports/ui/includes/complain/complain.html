@@ -1,0 +1,44 @@
+<template name="complain">
+    <div class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+              {{#if isDone}}
+                <form>
+                  <div class="modal-header">
+                  <a href="#"  data-dismiss="modal">
+                    <i class="fa fa-times" style="float:right;color:#888">
+                    </i>
+                  </a>
+                    <h4 class="modal-title">Complain</h4>
+                  </div>
+                  <div class="modal-body" style="text-align:center; margin: 25px;">
+                    Thank you
+                  </div>
+                  <div class="modal-footer">
+                      <button type="button" class="btn btn-secodary" data-dismiss="modal">Close</button>
+                  </div>
+                </form>
+              {{else}}
+                <form>
+                  <div class="modal-header">
+                  <a href="#"  data-dismiss="modal">
+                    <i class="fa fa-times" style="float:right;color:#888">
+                    </i>
+                  </a>
+                    <h4 class="modal-title">Complain</h4>
+                  </div>
+                  <div class="modal-body" style="text-align:center">
+                    <div class="form-group">
+                      <label for="comment">Tell us about you complain</label>
+                      <textarea class="form-control" rows="5" id="comment"></textarea>
+                    </div>
+                  </div>
+                  <div class="modal-footer">
+                      <button type="button" class="btn btn-primary send-complain" >Send</button>
+                  </div>
+                </form>
+              {{/if}}
+            </div>
+        </div>
+    </div>
+</template>

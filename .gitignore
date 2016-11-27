@@ -1,3 +1,10 @@
-node_modules/
+# Operating System
 .DS_Store
+
+# Configuration
+settings.json
+# Operating System
+.DS_Store
+
+# Configuration
 settings.json

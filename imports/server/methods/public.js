@@ -13,9 +13,9 @@ Meteor.methods({
 });
 
 Meteor.methods({
-  'upload'(url) {
+  'upload'(data) {
     let user_id = Meteor.userId()
-    return Keystamp.upload(user_id, url)
+    return Keystamp.upload(user_id, data)
   }
 });
 
@@ -62,7 +62,7 @@ Meteor.methods({
       return Keystamp.getUsers(user_id)
     }
     else if (user.role === 'issuer') {
-      return Keystamp.getAdvisors(user_id)
+      return Keystamp.getAllAdvisers()
     }
   }
 });
@@ -87,7 +87,7 @@ I20161127-02:51:37.934(-5)? -------->>> API POST http://localhost:4000/api/creat
 I20161127-02:51:37.934(-5)?   phone: '123123',
 I20161127-02:51:37.934(-5)?   password: '1231232',
 I20161127-02:51:37.934(-5)?   role: 'advisor',
-I20161127-02:51:37.935(-5)?   assignTo: '9Az49L9SMyMf3kpiu',
+I20161127-02:51:37.935(-5)?   assignedTo: '9Az49L9SMyMf3kpiu',
 I20161127-02:51:37.935(-5)?   _id: 'ER34cdYybANaTmegS' }
 
 

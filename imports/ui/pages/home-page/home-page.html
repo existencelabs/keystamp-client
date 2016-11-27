@@ -4,6 +4,7 @@
     {{#if isCustomer}}
     <!-- CUSTOMER -->
 
+      <button class="btn btn-danger btn-large complain" style="float:right; margin: -5px 10px 0 0">Complain</button>
       <h3>Customer Dashboard</h3>
       <div class="container">
         <div class="row">
@@ -14,9 +15,9 @@
                 <div class="docs">
                   {{#each doc in getDocsToSign}}
                     <div class="doc">
-                      {{doc.path}}
+                      <button class="btn btn-secondary sign btn-large" style="float:right" data-doc="hash">Sign</button>
+                      <strong>{{getFilename doc.path}}</strong>
                       {{doc.updatedAt}}
-                      <button class="btn btn-secondary sign btn-large" data-doc="hash">Sign</button>
                     </div>
                   {{/each}}
                 </div>
@@ -33,7 +34,7 @@
                 <div class="docs">
                   {{#each doc in getDocsSigned}}
                     <div class="doc">
-                      {{doc.path}}
+                      <strong>{{getFilename doc.path}}</strong>
                       {{doc.updatedAt}}
                     </div>
                   {{/each}}
@@ -45,9 +46,6 @@
           </div>
         </div>
       </div>
-
-
-
 
     {{else}}
 
@@ -84,8 +82,62 @@
 
         {{#if isAdvisor}}
           <!-- ADVISOR -->
+          <button class="btn btn-danger btn-large complain" style="float:right; margin: -5px 10px 0 0">Complain</button>
           <h3>Advisor Dashboard</h3>
+          <div class="box after-graph">
+            <button class="btn btn-primary btn-large add-user" style="float:right; margin:10px;">Add a User</button>
+            <h3>Customers</h3>
+            <div style="clear:both"></div>
+            <div class="users">
+              {{#each u in getUsers}}
+                <div class="user">
+                  <button class="btn btn-secondary upload-doc" data-uid="{{u.uid}}" style="float:right">Upload</button>
+                  <strong>{{u.email}}</strong> {{u.phone}}
+                </div>
+              {{/each}}
+            </div>
+          </div>
 
+          <div class="container">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="box" style="margin: 20px 0">
+                  <h3>To sign</h3>
+                  {{#if haveDocsToSign}}
+                    <div class="docs">
+                      {{#each doc in getDocsToSign}}
+                        <div class="doc">
+                          <button class="btn btn-secondary sign btn-large" style="float:right"  data-doc="hash">Sign</button>
+                          <strong>{{getFilename doc.path}}</strong>
+                          {{doc.updatedAt}}
+                        </div>
+                      {{/each}}
+                    </div>
+                  {{else}}
+                    <span class="no-items">No document to sign</span>
+                  {{/if}}
+                </div>
+              </div>
+
+              <div class="col-md-6" style="margin: 20px 0">
+                <div class="box">
+                  <h3>Archives</h3>
+                  {{#if haveDocsSigned}}
+                    <div class="docs">
+                      {{#each doc in getDocsSigned}}
+                        <div class="doc">
+                          <strong>{{getFilename doc.path}}</strong>
+                          {{doc.updatedAt}}
+                        </div>
+                      {{/each}}
+                    </div>
+                  {{else}}
+                    <span class="no-items">No document signed already</span>
+                  {{/if}}
+                </div>
+              </div>
+            </div>
+          </div>
 
         {{else}}
 
@@ -122,7 +174,20 @@
 
             {{#if isIssuer}}
               <!-- Issuer -->
+              <button class="btn btn-danger btn-large complain" style="float:right; margin: -5px 10px 0 0">Complain</button>
               <h3>Issuer Dashboard</h3>
+              <div class="box">
+                <h3>Customers</h3>
+                <div class="users">
+                  {{#each u in getUsers}}
+                    <div class="user">
+                      <button class="btn btn-secondary upload-doc" data-uid="{{u.uid}}" style="float:right">Upload</button>
+                      <strong>{{u.email}}</strong> {{u.phone}}
+                    </div>
+                  {{/each}}
+                </div>
+              </div>
+
 
             {{/if}}
 
@@ -136,9 +201,9 @@
     {{/if}}
 
   {{else}}
-      <div style="margin-top:50px; text-align: center">
-        Please <a href="/login">Login</a> <br/> <span class="color: #AAA">You will be redirected soon</span>
-      </div>
+    <div style="margin-top:50px; text-align: center">
+      Please <a href="/login">Login</a> <br/> <span class="color: #AAA">You will be redirected soon</span>
+    </div>
   {{/if}}
 
 

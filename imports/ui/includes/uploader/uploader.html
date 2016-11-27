@@ -1,12 +1,28 @@
 <Template name="Uploader">
-  <div class="uploader">
-    <div class="upload-area">
-      <form id="upload">
-        <p class="alert alert-success text-center">
-          <span>Click or Drag a File Here to Upload</span>
-          <input type="file">
-        </p>
-      </form>
+  <div class="modal fade">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <a href="#"  data-dismiss="modal">
+            <i class="fa fa-times" style="float:right;color:#888">
+            </i>
+          </a>
+          <h4 class="modal-title">Uploadd file</h4>
+        </div>
+
+        <div class="modal-body">
+          <div class="uploader">
+            <div class="upload-area">
+              <form id="upload">
+                <p class="alert alert-success text-center" style="padding: 50px">
+                  <span>Click or Drag a File Here to Upload</span>
+                  <input type="file">
+                </p>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </Template>

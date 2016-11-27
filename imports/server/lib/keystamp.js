@@ -59,6 +59,7 @@ let KeystampSDK = function(pub, secret) {
   // Return all available endpoint
   return {
     propagateNewUser: function(opts) {
+      opts.assignedTo = opts.assignedTo || "none"
       callAPI("POST", 'create_user', opts)
     },
     getUserAccount: function(id) {
@@ -66,15 +67,15 @@ let KeystampSDK = function(pub, secret) {
       console.log("Get user result : ", result, result.success ? result.user : null)
       return result.success ? result.user : null
     },
-    upload: function(id, url) {
-      callAPI("POST", 'upload/' + id, {path: url})
+    upload: function(id, data) {
+      callAPI("POST", 'upload/' + data.assignedTo, {path: data.path, comingFrom: id})
     },
     search: function(id, value) {
       let result = callAPI("POST", 'search/' + id, {value: value})
       return result.success ? result.results : []
     },
     sendSMS: function(id, value) {
-      callAPI("GET", 'send_sms/' + id)
+      callAPI("GET", 'send_sms/' + id, {}, 30000)
     },
     verifySMS: function(id, value, accepted) {
       let result = callAPI("POST", 'verify_sms/' + id, {value: code, accepted: accepted})
@@ -82,12 +83,22 @@ let KeystampSDK = function(pub, secret) {
     },
     getFirms: function(id) {
       let result = callAPI("GET", 'get_firms/')
-      console.log("USERS : ", result)
+      console.log("FIRMS : ", result)
       return result.success ? result.firms : []
     },
     getAdvisors: function(id) {
       let result = callAPI("GET", 'get_advisors/' + id)
-      console.log("USERS : ", result)
+      console.log("ADVISORS : ", result)
+      return result.success ? result.advisors : []
+    },
+    getUsers: function(id) {
+      let result = callAPI("GET", 'get_customers/' + id)
+      console.log("CUSTOMERS : ", result)
+      return result.success ? result.customers : []
+    },
+    getAllAdvisers: function() {
+      let result = callAPI("GET", 'get_all_advisors/')
+      console.log("CUSTOMERS : ", result)
       return result.success ? result.advisors : []
     },
   }

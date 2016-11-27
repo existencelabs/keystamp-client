@@ -6,6 +6,7 @@ import '../../includes/graph2/graph';
 import '../../includes/uploader/uploader';
 import '../../includes/sign-document/sign-document';
 import '../../includes/new-user/new-user';
+import '../../includes/complain/complain';
 
 
 
@@ -70,10 +71,19 @@ Template.HomePage.helpers({
     return (Template.instance().data.user.role === 'customer')
   },
 
+  // Issuer
+  isIssuer() {
+    return (Template.instance().data.user.role === 'issuer')
+  },
+
   getUsers() {
     return Template.instance().users.get()
   },
 
+  getFilename(path) {
+    let split = path.split('/')
+    return split[split.length - 1]
+  },
 
   haveDocsToSign() {
     let docs = Template.instance().data.user.docs
@@ -133,5 +143,15 @@ Template.HomePage.events({
   'click .add-firm'(e, instance) {
     // Display Modal
     Modal.show('newUser', {role: 'firm'})
+  },
+  'click .add-user'(e, instance) {
+    Modal.show('newUser', {role: 'customer'})
+  },
+  'click .complain'() {
+    Modal.show('complain')
+  },
+  'click .upload-doc'(e, instance) {
+    let uid = e.currentTarget.getAttribute('data-uid')
+    Modal.show('Uploader', {assignedTo: uid})
   }
 })
