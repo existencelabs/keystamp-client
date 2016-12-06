@@ -4,7 +4,7 @@
     "SECRET": 456
   },
   "AWSAccessKeyId": "AKIAIDOVFMFKZN6VHAPA",
-  "AWSSecretAccessKey": "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",
+  "AWSSecretAccessKey": "",
 
   "IS_DEV": true
 }
